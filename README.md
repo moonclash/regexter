@@ -1,3 +1,2 @@
 # regexter
-simple regular expression utility tool
-
+![regexter](https://raw.githubusercontent.com/moonclash/regexter/master/regexter.png)
