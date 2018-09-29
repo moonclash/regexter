@@ -20,7 +20,7 @@ const RegexTer = {
         const behind = this.buildBehind(current);
         return `${behind}${current}`;
     }
-}
+};
 
 RegexTer.hasDigits = function(str) {
     return /\d/g.test(str);
@@ -31,7 +31,7 @@ RegexTer.hasWhiteSpace = function(str) {
 };
 
 RegexTer.hasSpecialCharacters = function(str) {
-
+    return /\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:|\s/g.test(str);
 }
 
 RegexTer.hasOneOrMoreUpper = function(str) {
@@ -73,10 +73,13 @@ RegexTer.preceededBy = function(pattern, preceeder, str) {
     return regex.test(str);
 }
 
-
 RegexTer.between = function(left, middle, right, str) {
     const leftPattern = this.buildBehind(left);
     const rightPattern = this.buildAhead(right);
     const regex = new RegExp(leftPattern + middle + rightPattern, 'gi');
     return regex.test(str);
+}
+
+RegexTer.checkMultipleConditions = function(conditions, str) {
+    return all(conditions);
 }
