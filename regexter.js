@@ -22,6 +22,22 @@ const RegexTer = {
     }
 }
 
+RegexTer.hasDigits = function(str) {
+    return /\d/g.test(str);
+};
+
+RegexTer.hasWhiteSpace = function(str) {
+    return /\s/g.test(str);
+};
+
+RegexTer.hasSpecialCharacters = function(str) {
+
+}
+
+RegexTer.hasOneOrMoreUpper = function(str) {
+    return /[A-Z]{1,}/g.test(str);
+};
+
 RegexTer.containsWords = function(str, words) {
     const regex = this.buildWordsRegex(words);
     return regex.test(str);
@@ -56,6 +72,7 @@ RegexTer.preceededBy = function(pattern, preceeder, str) {
     const regex = new RegExp(this.buildPattern(this.buildLookBehind(pattern, preceeder)));
     return regex.test(str);
 }
+
 
 RegexTer.between = function(left, middle, right, str) {
     const leftPattern = this.buildBehind(left);
