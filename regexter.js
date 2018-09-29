@@ -6,11 +6,19 @@ const RegexTer = {
   buildPattern(pattern, flag=null) {
     return flag ? flag : '' + pattern
   },
+  buildAhead(pattern) {
+    return `(?=${pattern})`;
+  },
+  buildBehind(pattern) {
+    return `(?<=${pattern})`;
+  },
   buildLookAhead(current, followedBy) {
-    return `${current}(?=${followedBy})`
+    const ahead = this.buildAhead(current);
+    return `${current}${ahead}`;
   },
   buildLookBehind(current, preceededBy) {
-    return `(?<=${preceededBy})${current}`;
+    const behind = this.buildBehind(current);
+    return `${behind}${current}`;
   }
 }
  
@@ -49,4 +57,9 @@ RegexTer.preceededBy = function(pattern, preceeder, str) {
   return regex.test(str);
 }
 
-
+RegexTer.between = function(left, middle, right, str) {
+  const leftPattern = this.buildBehind(left);
+  const rightPattern = this.buildAhead(right);
+  const regex = new RegExp(leftPattern + middle + rightPattern, 'gi');
+  return regex.test(str);
+}
