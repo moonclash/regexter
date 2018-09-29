@@ -37,6 +37,24 @@ RegexTer.hasSpecialCharacters = function(str) {
 RegexTer.hasOneOrMoreUpper = function(str) {
   return /[A-Z]{1,}/g.test(str);
 };
+
+RegexTer.countAtLeast = function(pattern, n, str) {
+  const regexCore = this.buildPattern(`${pattern}{${n},}`);
+  const regex = new RegExp(regexCore);
+  return regex.test(str);
+};
+
+RegexTer.countExact = function (pattern, n, str) {
+  const regexCore = this.buildPattern(`${pattern}{${n}}`);
+  const regex = new RegExp(regexCore);
+  return regex.test(str);
+};
+
+RegexTer.countInRange = function(pattern, min, max, str) {
+  const regexCore = this.buildPattern(`${pattern}{${n},}`);
+  const regex = new RegExp(regexCore);
+  return regex.test(str);
+};
  
 RegexTer.containsWords = function(str, words) {
   const regex = this.buildWordsRegex(words);
