@@ -1,0 +1,19 @@
+{
+  "name": "regexter",
+  "version": "1.0.0",
+  "description": "![regexter](https://raw.githubusercontent.com/moonclash/regexter/master/regexter.png)",
+  "main": "regexter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/moonclash/regexter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/moonclash/regexter/issues"
+  },
+  "homepage": "https://github.com/moonclash/regexter#readme"
+}
