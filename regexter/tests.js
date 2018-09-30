@@ -56,7 +56,7 @@ describe("Starts with test", function() {
 
 describe("Ends with test", function() {
 	it("should return true if a string ends with a specified pattern", function() {
-		expect(RegexTer.endsWith('lean', 'Athlean')).toBe(true);
+		expect(RegexTer.endsWith('sho be', 'Plansho be')).toBe(true);
 	});
 });
 
@@ -65,6 +65,13 @@ describe("Followed by test", function() {
 		expect(RegexTer.followedBy(pattern='a', follower='b', str='abba')).toBe(true);
 	});
 });
+
+describe("Preceeded by test", function() {
+	it("should return true if a specified pattern is preceeded by another pattern", function() {
+		expect(RegexTer.preceededBy(pattern='ko', preceeder='yo', str='yoko')).toBe(true);
+	});
+});
+
 
 
 
