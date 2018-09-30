@@ -102,3 +102,5 @@ RegexTer.checkMultipleConditions = function(conditions, str) {
   const checksResults = conditions.map(condition => condition(str));
   return checksResults.every(result => result);
 }
+
+module.exports = RegexTer;
