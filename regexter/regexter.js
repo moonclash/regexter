@@ -98,10 +98,8 @@ RegexTer.between = function(left, middle, right, str) {
     return regex.test(str);
 }
 
-RegexTer.checkMultipleConditions = function(conditions, str) {
-    const checksResults = conditions.map(condition => condition(str));
-    return checksResults.every(result => result);
+RegexTer.checkMultipleConditions = function(conditions) {
+    return conditions.every(result => result);
 }
-
 
 module.exports = RegexTer;

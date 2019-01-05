@@ -73,5 +73,18 @@ describe("Preceeded by test", function() {
 });
 
 
+describe("Multiple conditions test", function() {
+	it("should return true if all conditions match a string patteern", function() {
+		expect(RegexTer.checkMultipleConditions(
+				[
+					RegexTer.followedBy(pattern='foo', follower='bar', str='foobar'),
+					RegexTer.preceededBy(pattern='bar', preceeder='foo', str='foobar'),
+					RegexTer.startsWith('dare', 'daredevil')
+				]
+
+			)).toBe(true);
+	});
+})
+
 
 
