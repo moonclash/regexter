@@ -136,6 +136,12 @@ describe("count at least test", function() {
 	});
 });
 
+describe("between test", function() {
+	it("should match a middle pattern", function() {
+		expect(RegexTer.between(left='yo', middle='ko', right='no', 'yokono')).toBe(true);
+	});
+});
+
 
 
 
