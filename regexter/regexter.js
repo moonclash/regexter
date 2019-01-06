@@ -42,6 +42,21 @@ RegexTer.hasOneOrMoreUpper = function(str) {
     return /[A-Z]{1,}/g.test(str);
 };
 
+
+RegexTer.minMaxLength = function(min=null, max=null, str) {
+    if (min && max) {
+        return str.length >= min && str.length <= max;
+    }
+
+    if (min) {
+        return str.length >= min;
+    }
+
+    if (max) {
+        return str.length <= max;
+    }
+}
+
 RegexTer.countAtLeast = function(pattern, n, str) {
     const regexCore = this.buildPattern(`${pattern}{${n},}`);
     const regex = new RegExp(regexCore);

@@ -105,6 +105,24 @@ describe("Password test", function() {
 	});
 });
 
+describe("Min max length test", function() {
+	it("should match specified range of length", function() {
+		expect(RegexTer.minMaxLength(min=3, max=10, str='hey world!')).toBe(true);
+	});
+});
+
+describe("Min lenght test", function() {
+	it("should match specified minimum length", function() {
+		expect(RegexTer.minMaxLength(min=5, max=null, str='hello')).toBe(true);
+	});
+});
+
+describe("max length test", function() {
+	it("should match specified maximum length", function() {
+		expect(RegexTer.minMaxLength(min=null, max=10, str='juqwerpald')).toBe(true);
+	});
+});
+
 
 
 
