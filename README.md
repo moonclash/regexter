@@ -96,3 +96,12 @@ RegexTer's public methods to be used for creating and testing regular expression
   RegexTer.exactMatch('car', 'cat') // returns false
  ```
 
+   `RegexTer.between(left, middle, right, str)` - will match a `middle` pattern if it's preceeded by `left` and followed by `right`
+ Example:
+ ```
+  RegexTer.between(left='yo', middle='ko', right='no', 'yokono') // returns true
+  RegexTer.between(left='yo', middle='yo', right='no', 'yokono') // returns false
+ ```
+
+
+
