@@ -81,5 +81,18 @@ RegexTer's public methods to be used for creating and testing regular expression
   RegexTer.minMaxLength(min=null, max=10, str='juqwerpald') // returns true
 
  ```
- 
- 
+
+  `RegexTer.countAtLeast(pattern, n, str)` - counts a minimum number of occurences of a specified pattern in a string 
+ Example:
+ ```
+  RegexTer.countAtLeast('car', 2, 'there are 2 car in this car') // returns true
+  RegexTer.countAtLeast('car', 2, 'there are 2 cat in this car') // returns false
+ ```
+
+  `RegexTer.exactMatch(pattern, str)` - will match a pattern strictly
+ Example:
+ ```
+  RegexTer.exactMatch('cat', 'cat') // returns true
+  RegexTer.exactMatch('car', 'cat') // returns false
+ ```
+
