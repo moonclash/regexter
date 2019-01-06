@@ -29,12 +29,16 @@ RegexTer has a few core methods defined in the `RegexTer` object that are intern
 
 RegexTer's public methods to be used for creating and testing regular expressions with strings
 
+#### hasDigits
+
 `RegexTer.hasDigits(str)` - checks a string if it contains digits.
  Example:
  ```
   RegexTer.hasDigits('h3llo') // returns true
   RegexTer.hasDigits('hello') // returns false
  ```
+
+ #### hasWhiteSpace
  
  `RegexTer.hasWhiteSpace(str)` - checks a string if it contains whitespace.
  Example:
@@ -42,6 +46,8 @@ RegexTer's public methods to be used for creating and testing regular expression
   RegexTer.hasWhiteSpace('hello world') // returns true
   RegexTer.hasWhiteSpace('helloworld') // returns false
  ```
+
+  #### noWhiteSpace
  
  `RegexTer.noWhiteSpace(str)` - only returns `true` if the string does not contain whitespace
  Example:
@@ -49,6 +55,7 @@ RegexTer's public methods to be used for creating and testing regular expression
   RegexTer.noWhiteSpace('hello world') // returns false
   RegexTer.noWhiteSpace('helloworld') // returns true
  ```
+  #### hasSpecialCharacters
  
   `RegexTer.hasSpecialCharacters(str)` - only returns `true` if the string contains any special characters such as `!"£$%^@`
  Example:
@@ -56,6 +63,8 @@ RegexTer's public methods to be used for creating and testing regular expression
   RegexTer.hasSpecialCharacters('regular expressions are fun!!!') // returns true
   RegexTer.hasSpecialCharacters('regular expressions are fun') // returns false
  ```
+
+  #### hasOneOrMoreUpper
 
   `RegexTer.hasOneOrMoreUpper(str)` - only returns `true` if the string contains one or more upper case characters
  Example:
@@ -71,6 +80,7 @@ RegexTer's public methods to be used for creating and testing regular expression
   RegexTer.hasOneOrMoreUpper('i am doing regex') // returns false
  ```
 
+ #### minMaxLength
 
    `RegexTer.minMaxLength(min=null, max=null, str)` - allows you to check the lenght of a string by min, max or a specific range
  Example:
@@ -81,6 +91,7 @@ RegexTer's public methods to be used for creating and testing regular expression
   RegexTer.minMaxLength(min=null, max=10, str='juqwerpald') // returns true
 
  ```
+ #### countAtLeast
 
   `RegexTer.countAtLeast(pattern, n, str)` - counts a minimum number of occurences of a specified pattern in a string 
  Example:
@@ -89,12 +100,16 @@ RegexTer's public methods to be used for creating and testing regular expression
   RegexTer.countAtLeast('car', 2, 'there are 2 cat in this car') // returns false
  ```
 
+  #### exactMatch
+
   `RegexTer.exactMatch(pattern, str)` - will match a pattern strictly
  Example:
  ```
   RegexTer.exactMatch('cat', 'cat') // returns true
   RegexTer.exactMatch('car', 'cat') // returns false
  ```
+
+  #### between
 
    `RegexTer.between(left, middle, right, str)` - will match a `middle` pattern if it's preceeded by `left` and followed by `right`
  Example:
