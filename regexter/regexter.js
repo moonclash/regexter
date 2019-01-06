@@ -30,6 +30,10 @@ RegexTer.hasWhiteSpace = function(str) {
     return /\s/g.test(str);
 };
 
+RegexTer.noWhiteSpace = function(str) {
+    return RegexTer.hasWhiteSpace(str) === false;
+}
+
 RegexTer.hasSpecialCharacters = function(str) {
     return /\`|\~|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\+|\=|\[|\{|\]|\}|\||\\|\'|\<|\,|\.|\>|\?|\/|\""|\;|\:|\s/g.test(str);
 }
@@ -102,9 +106,15 @@ RegexTer.checkMultipleConditions = function(conditions) {
     return conditions.every(result => result);
 }
 
+RegexTer.matchSimpleConditions = function(conditions, str) {
+    const resultCheck = conditions.map(condition => condition.call(null, str));
+    return resultCheck.every(result => result);
+}
+
 RegexTer.exactMatch = function(pattern, str) {
     const regex = new RegExp(`^${pattern}$`,'g');
     return regex.test(str);
 }
+
 
 module.exports = RegexTer;

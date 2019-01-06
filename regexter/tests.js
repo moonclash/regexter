@@ -92,5 +92,20 @@ describe("Exact match test", function() {
 	});
 });
 
+describe("Password test", function() {
+	it("should be able to match a ficticious password", function() {
+		expect(RegexTer.matchSimpleConditions(
+			[
+				RegexTer.hasDigits,
+				RegexTer.hasSpecialCharacters,
+				RegexTer.hasOneOrMoreUpper,
+				RegexTer.noWhiteSpace
+
+			], 'H3ll0!')).toBe(true);
+	});
+});
+
+
+
 
 
