@@ -3,8 +3,8 @@ const RegexTer = {
         const regex = new RegExp(words.reduce((a, b) => a + '|' + b), 'gi');
         return regex;
     },
-    buildPattern(pattern, flag = null) {
-        return flag ? flag : '' + pattern
+    buildPattern(pattern) {
+        return pattern;
     },
     buildAhead(pattern) {
         return `(?=${pattern})`;
@@ -58,9 +58,9 @@ RegexTer.minMaxLength = function(min=null, max=null, str) {
 }
 
 RegexTer.countAtLeast = function(pattern, n, str) {
-    const regexCore = this.buildPattern(`${pattern}{${n},}`);
-    const regex = new RegExp(regexCore);
-    return regex.test(str);
+    const regexCore = this.buildPattern(`${pattern}`);
+    const regex = new RegExp(regexCore, 'gi');
+    return str.match(regex).length >= n;
 };
 
 RegexTer.countExact = function(pattern, n, str) {
@@ -130,6 +130,5 @@ RegexTer.exactMatch = function(pattern, str) {
     const regex = new RegExp(`^${pattern}$`,'g');
     return regex.test(str);
 }
-
 
 module.exports = RegexTer;

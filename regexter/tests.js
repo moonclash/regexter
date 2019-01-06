@@ -24,6 +24,12 @@ describe("One or more upper character test", function() {
   });
 });
 
+describe("One or more upper character test", function() {
+  it("should return true if a string contains one or more upper characters", function() {
+    expect(RegexTer.countAtLeast('car', 2, 'There are at least two car strings in this car')).toBe(true);
+  });
+});
+
 describe("Count a minimum number of pattern occurances", function() {
   it("should return true for a specified n of an occurance", function() {
     expect(RegexTer.countExact('dog', 2, 'one dog two dog in this string')).toBe(true);
@@ -123,6 +129,12 @@ describe("max length test", function() {
 	});
 });
 
+
+describe("count at least test", function() {
+	it("should match a minimum of a specified pattern", function() {
+		expect(RegexTer.countAtLeast('car', 2, 'there are 2 car in this car')).toBe(true);
+	});
+});
 
 
 
