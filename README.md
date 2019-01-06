@@ -50,8 +50,36 @@ RegexTer's public methods to be used for creating and testing regular expression
   RegexTer.noWhiteSpace('helloworld') // returns true
  ```
  
+  `RegexTer.hasSpecialCharacters(str)` - only returns `true` if the string contains any special characters such as `!"£$%^@`
+ Example:
+ ```
+  RegexTer.hasSpecialCharacters('regular expressions are fun!!!') // returns true
+  RegexTer.hasSpecialCharacters('regular expressions are fun') // returns false
+ ```
+
+  `RegexTer.hasOneOrMoreUpper(str)` - only returns `true` if the string contains one or more upper case characters
+ Example:
+ ```
+  RegexTer.hasOneOrMoreUpper('i aM dOinG ReGeX') // returns true
+  RegexTer.hasOneOrMoreUpper('i am doing regex') // returns false
+ ```
  
+   `RegexTer.hasOneOrMoreUpper(str)` - only returns `true` if the string contains one or more upper case characters
+ Example:
+ ```
+  RegexTer.hasOneOrMoreUpper('i aM dOinG ReGeX') // returns true
+  RegexTer.hasOneOrMoreUpper('i am doing regex') // returns false
+ ```
 
 
+   `RegexTer.minMaxLength(min=null, max=null, str)` - allows you to check the lenght of a string by min, max or a specific range
+ Example:
+ ```
+  // checking for a string lenght between a certain range:
+  RegexTer.minMaxLength(min=3, max=10, str='hey world!') // returns true
+  RegexTer.minMaxLength(min=5, max=null, str='hello') // returns true
+  RegexTer.minMaxLength(min=null, max=10, str='juqwerpald') // returns true
 
-
+ ```
+ 
+ 
