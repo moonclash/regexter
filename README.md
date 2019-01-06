@@ -118,5 +118,39 @@ RegexTer's public methods to be used for creating and testing regular expression
   RegexTer.between(left='yo', middle='yo', right='no', 'yokono') // returns false
  ```
 
+   #### startsWith
+
+  `RegexTer.startsWith(pattern, str)` - will match a string starting with a specified pattern
+ Example:
+ ```
+  RegexTer.startsWith('yo', 'yoko') // returns true
+  RegexTer.startsWith('ko', 'yoko') // returns false
+ ```
+
+  #### endsWith
+
+  `RegexTer.startsWith(pattern, str)` - will match a string ending with a specified pattern
+ Example:
+ ```
+  RegexTer.endsWith('sho be', 'Plansho be') // returns true
+  RegexTer.endsWith('are de', 'Plansho be') // returns false
+ ```
+
+  #### followedBy
+
+  `RegexTer.startsWith(pattern, follower, str)` - will match a string followed by a pattern
+ Example:
+ ```
+  RegexTer.followedBy(pattern='a', follower='b', str='abba') // returns true
+  RegexTer.followedBy(pattern='a', follower='z', str='abba') // returns false
+ ```
 
 
+  #### preceededBy
+
+  `RegexTer.preceededBy(pattern, preceeder, str)` - will match a string preceeded by a pattern
+ Example:
+ ```
+  RegexTer.preceededBy(pattern='ko', preceeder='yo', str='yoko') // returns true
+  RegexTer.preceededBy(pattern='ko', preceeder='zo', str='yoko') // returns false
+ ```
