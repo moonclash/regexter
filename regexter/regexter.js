@@ -102,4 +102,9 @@ RegexTer.checkMultipleConditions = function(conditions) {
     return conditions.every(result => result);
 }
 
+RegexTer.exactMatch = function(pattern, str) {
+    const regex = new RegExp(`^${pattern}$`,'g');
+    return regex.test(str);
+}
+
 module.exports = RegexTer;

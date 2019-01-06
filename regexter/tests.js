@@ -84,7 +84,13 @@ describe("Multiple conditions test", function() {
 
 			)).toBe(true);
 	});
-})
+});
+
+describe("Exact match test", function() {
+	it("should return true if the regex matches an exact pattern", function() {
+		expect(RegexTer.exactMatch('Bro', 'Bro')).toBe(true);
+	});
+});
 
 
 
